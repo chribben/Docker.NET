@@ -1,0 +1,30 @@
+Install Vagrant
+===============
+https://www.vagrantup.com/downloads.html
+
+Connect to VM
+=============
+vagrant ssh
+
+Install Docker
+==============
+https://docs.docker.com/installation/ubuntulinux/#installation
+
+Build
+=====
+docker build -t hellowebapi .
+
+Run 
+===
+docker run -d -t -p 5004:5004 hellowebapi
+
+Test from host
+==============
+Get ip of docker vm: docker inspect <id of container> and look for NetworkSettings/IPAddress
+curl <ip>:5004/api/hello
+
+Test from physical machine
+==========================
+Open browser and type localhost:5004/api/hello
+
+
